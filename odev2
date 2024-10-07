@@ -1,0 +1,38 @@
+// Soru 1: Liste elemanlarının toplamını döndüren fonksiyon
+int toplamListe(List<int> liste) {
+  int toplam = 0;
+  for (int sayi = 0; sayi < liste.length; sayi++) {  // Döngüyü sırayla işliyoruz.
+    toplam += liste[sayi];  // Listedeki her sayıyı toplam değişkenine ekliyoruz.
+  }
+  return toplam; 
+}
+
+// Soru 2: Liste içindeki tek sayıları döndüren fonksiyon
+List<int> tekSayilar(List<int> liste) {
+  List<int> tekSayilar = []; //içini doldurmsk için boş liste
+  for (int sayi in liste) {
+    if (sayi % 2 != 0) { // Sayı tek mi?
+      tekSayilar.add(sayi); // Tekse listeye ekle.
+    }
+  }
+  return tekSayilar;
+}
+
+// Soru 3: Listeyi ters çeviren fonksiyon
+List tersCevir(List liste) {
+  List tersListe = []; // Boş bir liste oluşturuyoruz.
+  
+  for (int i = liste.length - 1; i >= 0; i--) { // Listenin sonundan başlayarak geriye doğru gidiyoruz.
+    tersListe.add(liste[i]); // Her elemanı tersListe'ye ekliyoruz.
+  }
+  
+  return tersListe;
+}
+
+void main() {
+  List<int> sayilar = [77, 88, 99, 101];  // Sayı listem.
+  
+  print(toplamListe(sayilar)); 
+  print(tekSayilar(sayilar));   
+  print(tersCevir(sayilar));    
+}
